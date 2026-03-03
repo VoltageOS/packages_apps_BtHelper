@@ -30,7 +30,7 @@ android_app {
         "PlatformComposeCore",
         "SettingsLib",
         "SettingsLibSettingsTheme",
-        "custom-sdk_org.lsposed.hiddenapibypass_hiddenapibypass",
+        "BtHelper_hiddenapibypass",
     ],
 
     resource_dirs: [
@@ -70,4 +70,15 @@ prebuilt_etc {
     src: "hidden-api-whitelist_com.android.bluetooth.bthelper.xml",
     filename_from_src: true,
     system_ext_specific: true,
+}
+
+android_library_import {
+    name: "BtHelper_hiddenapibypass",
+    aars: ["libs/hiddenapibypass.aar"],
+    sdk_version: "36",
+    min_sdk_version: "36",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
 }
